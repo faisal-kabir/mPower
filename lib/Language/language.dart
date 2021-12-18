@@ -37,4 +37,6 @@ class Language {
 
   var Check_Your_Internet_Connection='Check Your Internet Connection';
 
+  var Successfully_logged_in='Successfully Logged In';
+
 }

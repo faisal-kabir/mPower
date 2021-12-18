@@ -28,7 +28,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
           scale: Tween(begin: 1.7, end: 0.7).animate(CurvedAnimation(
               parent: splashController.controller!.value, curve: Curves.easeInCirc)),
           child: Center(
-            child: Image.asset('assets/mPower.jpeg',width: Get.width*0.9,),
+            child: Image.asset('assets/logo.png',width: Get.width*0.9,),
           ),
         );
       }),

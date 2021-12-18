@@ -20,8 +20,9 @@ class AppConstant{
   static Size defaultScreenSize = const Size(380, 720);
   static AppLocale Default_Locale=AppLocale.EN;
   static Function Default_Language_Function=EN();
+  static int AnimationDelay=375;
 
-  static var Bearer='Bearer';
+  static var JWT='JWT';
   static String Email='email';
   static String password='password';
   static String password_confirmation='password_confirmation';

@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Themes{
-  static Color Primary= const Color(0xFF455D8C);
+  static Color Primary= const Color(0xFF5C0100);
   static Color Primary2= const Color(0xFF48D4C6);
   static Color Primary_Lite= const Color(0xFFFFFFFF);
   static Color Primary_Dark=Color(int.parse('#2661FA'.substring(1, 7), radix: 16) + 0xFF000000);

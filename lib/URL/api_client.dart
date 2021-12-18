@@ -17,7 +17,7 @@ class Api_Client{
   var client = http.Client();
   Map<String,String> header()=>{
     "Accept": "application/json",
-    'Authorization':'${AppConstant.Bearer} ${auth!.token}'
+    'Authorization':'${AppConstant.JWT} ${auth!.token}'
   };
   Map<String,String> header1()=>{
     "Accept": "application/json"

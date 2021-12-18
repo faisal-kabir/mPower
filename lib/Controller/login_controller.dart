@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:m_power/Model/auth.dart';
 import 'package:m_power/Route/route.dart';
 import 'package:m_power/URL/api_client.dart';
 import 'package:m_power/URL/app_constant.dart';
@@ -43,10 +44,11 @@ class LoginController extends GetxController{
           AppConstant.username: username.text,
           AppConstant.password: password.text
         },
-        onSuccess: (Map data){
+        onSuccess: (data){
           if(data.containsKey('non_field_errors')){
             ErrorMessage(message: data['non_field_errors'][0]);
           }else{
+            auth=Auth.fromJson(data);
             prefs!.setString(AppConstant.Share_Auth, json.encode(data));
             Get.offAllNamed(HOME);
           }

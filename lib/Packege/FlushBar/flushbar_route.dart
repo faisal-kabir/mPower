@@ -392,7 +392,7 @@ class FlushbarRoute<T> extends OverlayRoute<T> {
       }
       _timer = Timer(flushbar.duration!, () {
         if (isCurrent) {
-          navigator!.pop();
+          try{navigator!.pop();}catch(e){}
         } else if (isActive) {
           navigator!.removeRoute(this);
         }
