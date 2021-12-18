@@ -8,7 +8,7 @@ class Themes{
   static Color Primary_Lite= const Color(0xFFFFFFFF);
   static Color Primary_Dark=Color(int.parse('#2661FA'.substring(1, 7), radix: 16) + 0xFF000000);
   static Color Primary_Accent=Color(int.parse('#002b83'.substring(1, 7), radix: 16) + 0xFF000000);
-  static Color Background= const Color(0xFFFDFDFD);
+  static Color Background= const Color(0xFFF9BABC);
 
   static Color Icon_Color=Color(int.parse('#ffffff'.substring(1, 7), radix: 16) + 0xFF000000);
   static Color Highlite_Text_Color=Color(int.parse('#FFFFFF'.substring(1, 7), radix: 16) + 0xFF000000);
@@ -34,7 +34,7 @@ class Themes{
   static Color Red_lite= const Color(0xFFFF0000);
 
   static Color TextFieldBorder= const Color(0xFF434343);
-  static Color TextFieldBackground= const Color(0xFFF5F5F5);
+  static Color TextFieldBackground= const Color(0xFFFCDFDD);
   static Color Border= const Color(0xFF707070);
 
   static Color Blue= const Color(0xff1473E6);

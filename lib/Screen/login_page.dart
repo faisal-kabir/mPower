@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
           Align(
               alignment: Alignment.topLeft,
               child: Image.asset(
-                'assets/mPower.jpeg', height: Get.height * 0.1,)
+                'assets/logo.png', height: Get.height * 0.1,)
           ),
           Padding(
             padding: EdgeInsets.only(

@@ -5,13 +5,17 @@ import 'package:get/get.dart';
 import 'package:m_power/Controller/home_controller.dart';
 import 'package:m_power/Dimension/dimension.dart';
 import 'package:m_power/Model/application_list.dart';
+import 'package:m_power/Route/route.dart';
 import 'package:m_power/Theme/themes.dart';
 import 'package:m_power/URL/url.dart';
 import 'package:m_power/Widgets/circular_progress.dart';
+import 'package:m_power/Widgets/default_dialog.dart';
 import 'package:m_power/Widgets/grid_animation.dart';
 import 'package:m_power/Widgets/image_placeholder.dart';
 import 'package:m_power/Widgets/list_animation.dart';
 import 'package:m_power/Widgets/swipe_refresh.dart';
+
+import '../main.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -39,8 +43,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             centerTitle: true,
             automaticallyImplyLeading: false,
             backgroundColor: Themes.White,
+            actions: [
+              IconButton(
+                onPressed: () =>  logOut(),
+                icon: Icon(Icons.power_settings_new,color: Themes.Primary,)
+              )
+            ],
           ),
-          backgroundColor: Color(0xFFF9BABC),
           body: SwipeRefresh(
             controller: controller.refreshController,
             onRefresh: controller.onRefresh,
@@ -63,7 +72,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           index: index,
           child: Card(
             margin: EdgeInsets.only(top: Dimension.Padding),
-            color: index%2==0 ? Color(0xFFFCDFDD) : Colors.white,
+            color: index%2==0 ? Themes.TextFieldBackground : Colors.white,
             elevation: 5,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,6 +129,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Text(applicationData.applicantName!,style: Get.textTheme.bodyText2!.copyWith(color: Themes.Primary),textAlign: TextAlign.center,)
         ],
       ),
+    );
+  }
+
+
+  void logOut(){
+    Get.dialog(
+        DefaultDialog(
+          title: language.LogOut,
+          enableCloseButton: true,
+          child: Text(language.Are_you_sure_you_want_to_logout,style: Theme.of(context).textTheme.bodyText1,),
+          onButtonClick: (state){
+            if(!state) {
+              Get.back();
+            } else{
+              prefs!.clear();
+              Get.offAllNamed(LOGIN);
+            }
+          },
+        )
     );
   }
 

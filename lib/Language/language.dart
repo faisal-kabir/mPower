@@ -38,5 +38,9 @@ class Language {
   var Check_Your_Internet_Connection='Check Your Internet Connection';
 
   var Successfully_logged_in='Successfully Logged In';
+  var Yes='Yes';
+  var No='No';
+  var LogOut='LogOut';
+  var Are_you_sure_you_want_to_logout='Are you sure you want to logout?';
 
 }
