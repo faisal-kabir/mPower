@@ -1,16 +1,17 @@
-# m_power
+[![N|Solid](https://hotjobs.bdjobs.com/jobs/mpower/logonew.png)](https://nodesource.com/products/nsolid)
 
-A new Flutter project.
+# Features
+- Login screen
+- Show List of application/ website
+- Show Details screen
+- Any application is installed it’ll open from this application
 
-## Getting Started
+# Technical requirement:
+- Application developed by flutter framwork
+- Need to use BLOC/GetX pattern
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Screenshots
+![Screenshot 1](/Shot-1.png?raw=true)
+![Screenshot 2](/Shot-2.png?raw=true)
+![Screenshot 3](/Shot-3.png?raw=true)
+![Screenshot 4](/Shot-4.png?raw=true)
