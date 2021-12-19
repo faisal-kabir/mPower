@@ -8,6 +8,7 @@ import 'package:m_power/Model/application_list.dart';
 import 'package:m_power/Route/route.dart';
 import 'package:m_power/Theme/themes.dart';
 import 'package:m_power/URL/url.dart';
+import 'package:m_power/Widgets/application_skeleton.dart';
 import 'package:m_power/Widgets/circular_progress.dart';
 import 'package:m_power/Widgets/default_dialog.dart';
 import 'package:m_power/Widgets/grid_animation.dart';
@@ -102,32 +103,35 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         );
       },
-    ) : CircularProgress();
+    ) : ApplicationSkeleton();
   }
 
   singleApplication(ApplicationData applicationData, int position){
-    return Container(
-      margin: EdgeInsets.only(left: Dimension.Size_10),
-      width: Get.width/3,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Card(
-            elevation: 5,
-            child: Padding(
-              padding: EdgeInsets.all(Dimension.Size_10),
-              child: CachedNetworkImage(
-                imageUrl: '${URL.Main_Url}${applicationData.logoImg}',
-                height: 90,
-                width: 90,
-                fit: BoxFit.cover,
-                placeholder: (context, url) => ImagePlaceHolder(height: 90),
-                errorWidget: (context, url, error) => ImagePlaceHolder(height: 90),
+    return InkWell(
+      onTap: () => controller.goDetails(applicationData),
+      child: Container(
+        margin: EdgeInsets.only(left: Dimension.Size_10),
+        width: Get.width/3,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Card(
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(Dimension.Size_10),
+                child: CachedNetworkImage(
+                  imageUrl: '${URL.Main_Url}${applicationData.logoImg}',
+                  height: 90,
+                  width: 90,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => ImagePlaceHolder(height: 90),
+                  errorWidget: (context, url, error) => ImagePlaceHolder(height: 90),
+                ),
               ),
             ),
-          ),
-          Text(applicationData.applicantName!,style: Get.textTheme.bodyText2!.copyWith(color: Themes.Primary),textAlign: TextAlign.center,)
-        ],
+            Text(applicationData.applicantName!,style: Get.textTheme.bodyText2!.copyWith(color: Themes.Primary),textAlign: TextAlign.center,)
+          ],
+        ),
       ),
     );
   }
